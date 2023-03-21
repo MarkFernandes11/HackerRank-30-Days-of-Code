@@ -35,17 +35,21 @@ public class Day11_2DArrays {
 
 	private static void findMaxHourGlassSum(List<List<Integer>> arr) {
 		int maxSum = Integer.MIN_VALUE;
-		for (int i = 0; i < arr.size()-2; i++) {
+		for (int row = 0; row < arr.size()-2; row++) {
 			int sum = 0;
-			for (int j = 0; j < arr.get(0).size()-2; j++) {
-				sum = arr.get(i).get(j) + arr.get(i).get(j+1) + arr.get(i).get(j+2) + arr.get(i+1).get(j+1) 
-						+ arr.get(i+2).get(j) + arr.get(i+2).get(j+1) + arr.get(i+2).get(j+2);
+			for (int col = 0; col < arr.get(0).size()-2; col++) {
+				sum = getHourGlassSum(arr, row, col);
 				
 				maxSum = Math.max(maxSum, sum);
 			}
 		}
 		
 		System.out.println(maxSum);
+	}
+	
+	private static int getHourGlassSum(List<List<Integer>> arr, int row, int col) {
+		return arr.get(row).get(col) + arr.get(row).get(col+1) + arr.get(row).get(col+2) + arr.get(row+1).get(col+1) 
+				+ arr.get(row+2).get(col) + arr.get(row+2).get(col+1) + arr.get(row+2).get(col+2); 
 	}
 
 }
