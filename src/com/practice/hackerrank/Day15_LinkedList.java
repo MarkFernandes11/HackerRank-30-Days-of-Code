@@ -17,13 +17,13 @@ public class Day15_LinkedList {
     	Node currentNode = head;
     	Node newNode = new Node(data);;
     	
-    	// Case if linked list has 1 node
+    	// Case if linked list is empty
     	if(currentNode == null) {
     		return newNode;
     	}
 
     	while(currentNode != null) {
-    		
+    		// If next node is null then assigning the new node to its next node
     		if(currentNode.next == null) {
     			currentNode.next = newNode;
     			break;
