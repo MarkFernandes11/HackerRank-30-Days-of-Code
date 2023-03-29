@@ -11,6 +11,7 @@ public class Day26_NestedLogic {
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
+//		Enter date in format : dd mm yyyy
 		String returnDate = reader.readLine();
 		String dueDate = reader.readLine();
 		
