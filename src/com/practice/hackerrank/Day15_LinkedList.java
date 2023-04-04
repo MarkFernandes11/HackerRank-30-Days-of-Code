@@ -13,24 +13,24 @@ class Node {
 
 public class Day15_LinkedList {
 
-    public static  Node insert(Node head,int data) {
+    public static Node insert(Node head,int data) {
     	Node currentNode = head;
-    	Node newNode = new Node(data);;
+    	Node newNode = new Node(data);
     	
     	// Case if linked list is empty
     	if(currentNode == null) {
     		return newNode;
-    	}
-
-    	while(currentNode != null) {
-    		// If next node is null then assigning the new node to its next node
-    		if(currentNode.next == null) {
-    			currentNode.next = newNode;
-    			break;
-    		}
-    		
-    		currentNode = currentNode.next;
-    	}
+    	} else {
+	    	while(currentNode != null) {
+	    		// If next node is null then assigning the new node to its next node
+	    		if(currentNode.next == null) {
+	    			currentNode.next = newNode;
+	    			break;
+	    		}
+	    		
+	    		currentNode = currentNode.next;
+	    	}
+		}
     	
     	return head;
     }
